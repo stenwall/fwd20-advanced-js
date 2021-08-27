@@ -24,7 +24,7 @@ const summation = array => {
   return sum;
 };
 
-const fetchData = (resolve, reject) => {
+const fetchData = () => {
   return new Promise((resolve, reject) => {
     resolve('Hello');
   })
