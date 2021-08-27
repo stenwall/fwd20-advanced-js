@@ -1,5 +1,3 @@
-let numbersArray = [2, 4, 6, 8, 10];
-
 const doubleArray = array => {
   let doubleArray = [];
   for (let i = 0; i < array.length; i++) {
@@ -7,15 +5,6 @@ const doubleArray = array => {
   }
   return doubleArray;
 };
-
-const wordsArray = [
-  'cat',
-  'horse',
-  'computer',
-  'table',
-  'refrigerator',
-  'bottle'
-];
 
 const filterArray = array => {
   let wordArray = [];
@@ -35,8 +24,22 @@ const summation = array => {
   return sum;
 };
 
-module.exports = {
-    arrayMethod: doubleArray,
-    filterMethod: filterArray,
-    summationMethod: summation
+const fetchData = (resolve, reject) => {
+  return new Promise((resolve, reject) => {
+    resolve('Hello');
+  })
 }
+
+module.exports = {
+  doubleArray,
+  filterArray,
+  summation,
+  fetchData
+}
+
+
+// module.exports = {
+//     arrayMethod: doubleArray,
+//     filterMethod: filterArray,
+//     summationMethod: summation
+// }

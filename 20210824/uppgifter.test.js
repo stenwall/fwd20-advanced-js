@@ -1,8 +1,10 @@
-const functionalModule = require('./uppgifter');
+const { doubleArray, filterArray , summation, fetchData } = require('./uppgifter');
 
-const doubleArray = functionalModule.arrayMethod;
-const filterArray = functionalModule.filterMethod;
-const summation = functionalModule.summationMethod;
+// const functionalModule = require('./uppgifter');
+
+// const doubleArray = functionalModule.arrayMethod;
+// const filterArray = functionalModule.filterMethod;
+// const summation = functionalModule.summationMethod;
 
 const wordsArray = [
   'cat',
@@ -25,31 +27,17 @@ test('Return sum of all numbers from incoming array', () => {
   expect(summation([1, 2, 3, 4])).toBe(10);
 });
 
-// test('adds 1 + 2 to equal 3', () => {
-//     expect(sum(1, 2)).toBe(3);
-// });
+test('promise testing', () => {
+  return fetchData()
+    .then(data => {
+      expect(data).toBe('Hello'); });
+});
 
-
-function Circle(radius) {
-  this.radius = radius;
-}
-
-Circle.prototype.area = function () {
-  return Math.PI * this.radius * this.radius;
-};
-// Constructor pattern for creating new objects
-let circle1 = new Circle(5);
-
-let Circle = {
-  create(radius) {
-    // Creating prototypal linkage using Object.create
-    let obj = Object.create(this);
-    obj.radius = radius;
-    return obj;
-  },
-  area() {
-    return Math.PI * this.radius * this.radius;
-  }
-};
-
-let circle2 = Circle.create(5);
+// PUT
+test.each([
+  // [1, 1, 4], // borde faila
+  [1, 2, 3], // borde gå igenom
+  [2, 1, 3] // borde gå igenom
+])('.add(%i, %i)', (a, b, expected) => {
+  expect(a + b).toBe(expected);
+});
