@@ -1,3 +1,3 @@
-School exercises in the course Advanced JavaScript @ Chas Academy
+School exercises from the course Advanced JavaScript @ Chas Academy
 
 ---
